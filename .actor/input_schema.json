@@ -1,0 +1,31 @@
+{
+  "title": "Contractor License Verify — Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "required": ["jurisdiction"],
+  "properties": {
+    "jurisdiction": {
+      "title": "Jurisdiction (State)",
+      "type": "string",
+      "enum": ["WA", "CA"],
+      "enumTitles": [
+        "WA — Washington (LIVE: official WA L&I open data, bond + insurance included)",
+        "CA — California (BETA: CSLB may rate-limit automated requests; returns clean error if unavailable, no charge on failure)"
+      ],
+      "description": "Two-letter US state code. WA is fully live and reliable. CA is beta — returns a clean SESSION_ERROR if CSLB is unavailable; you are never charged on source failures.",
+      "editor": "select"
+    },
+    "license_number": {
+      "title": "License / Registration Number",
+      "type": "string",
+      "description": "Contractor license or registration number. WA: alphanumeric (e.g. ECOSTSC758NN). CA: numeric only, up to 8 digits (e.g. 1100000). Exact match, case-insensitive. Preferred over business_name for precision.",
+      "editor": "textfield"
+    },
+    "business_name": {
+      "title": "Business Name (WA only)",
+      "type": "string",
+      "description": "Business name or partial name for WA lookups. Case-insensitive partial match — may return multiple results. CA requires license_number instead.",
+      "editor": "textfield"
+    }
+  }
+}

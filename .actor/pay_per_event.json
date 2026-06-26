@@ -1,0 +1,9 @@
+[
+  {
+    "license-verification": {
+      "eventTitle": "License verification",
+      "eventDescription": "One contractor license lookup returning normalized status (active/expired/suspended/revoked), bond, and insurance data from official state sources.",
+      "eventPriceUsd": 0.03
+    }
+  }
+]

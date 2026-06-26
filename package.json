@@ -1,0 +1,54 @@
+{
+  "name": "license-verify-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for contractor license verification — WA live (L&I open data, bond + insurance), CA beta (CSLB). Returns normalized JSON.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "license-verify-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/actor.js",
+    "start:mcp": "node dist/index.js",
+    "start:actor": "node dist/actor.js",
+    "smoke": "tsx scripts/smoke.ts"
+  },
+  "keywords": [
+    "mcp",
+    "contractor",
+    "license",
+    "verification",
+    "washington",
+    "california",
+    "bond",
+    "insurance"
+  ],
+  "author": "Fidele Maniraruta <lmaniraruta@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmaniraruta/license-verify-mcp.git"
+  },
+  "homepage": "https://github.com/lmaniraruta/license-verify-mcp#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "apify": "^3.7.2",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "apify-cli": "^1.6.2",
+    "tsx": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

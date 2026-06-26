@@ -1,0 +1,11 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties: {}
+    required: []
+    description: >
+      No server-level configuration needed. jurisdiction, license_number, and
+      business_name are runtime tool arguments passed per-call, not startup config.
+  commandFunction: |-
+    (config) => ({ command: "npx", args: ["-y", "license-verify-mcp"] })

@@ -1,0 +1,49 @@
+{
+  "actorSpecification": 1,
+  "name": "license-verify",
+  "title": "Contractor License Verify",
+  "description": "Verify contractor license/registration status mid-task. Returns normalized JSON with active/expired/suspended/revoked status, bond, and insurance. WA live (official L&I data). CA beta. Pay-per-event — agentic-payments eligible.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "dockerfile": "../Dockerfile",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "overview": {
+          "title": "Verification Results",
+          "transformation": {
+            "fields": [
+              "jurisdiction",
+              "found",
+              "result.license_number",
+              "result.business_name",
+              "result.status",
+              "result.license_type",
+              "result.bonded.is_bonded",
+              "result.insured.has_insurance",
+              "result.expiration_date",
+              "retrieved_at"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "jurisdiction":          { "label": "State" },
+              "found":                 { "label": "Found" },
+              "result.license_number": { "label": "License #" },
+              "result.business_name":  { "label": "Business Name" },
+              "result.status":         { "label": "Status" },
+              "result.license_type":   { "label": "License Type" },
+              "result.bonded.is_bonded": { "label": "Bonded" },
+              "result.insured.has_insurance": { "label": "Insured" },
+              "result.expiration_date": { "label": "Expires" },
+              "retrieved_at":          { "label": "Retrieved" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
