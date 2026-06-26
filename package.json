@@ -5,7 +5,7 @@
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "license-verify-mcp": "./dist/index.js"
+    "license-verify-mcp": "dist/index.js"
   },
   "files": [
     "dist",
@@ -35,7 +35,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lmaniraruta/license-verify-mcp.git"
+    "url": "git+https://github.com/lmaniraruta/license-verify-mcp.git"
   },
   "homepage": "https://github.com/lmaniraruta/license-verify-mcp#readme",
   "dependencies": {
