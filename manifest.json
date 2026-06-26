@@ -1,0 +1,22 @@
+{
+  "manifest_version": "0.2",
+  "name": "license-verify",
+  "version": "0.1.1",
+  "description": "Contractor license verification — WA live (L&I open data, bond + insurance included), CA beta (CSLB).",
+  "author": {
+    "name": "Fidele Maniraruta",
+    "email": "lmaniraruta@gmail.com"
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/dist/index.js"
+      ],
+      "env": {}
+    }
+  },
+  "license": "MIT"
+}
