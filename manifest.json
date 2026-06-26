@@ -18,5 +18,38 @@
       "env": {}
     }
   },
+  "tools": [
+    {
+      "name": "verify_license",
+      "description": "Verify a contractor's current license or registration status before awarding work, signing a contract, or performing due diligence. Supports WA (Washington L&I open data, bond + insurance) and CA (CSLB). Returns found status, normalized status enum, license type, dates, bond/insurance notes.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "jurisdiction": {
+            "type": "string",
+            "description": "Two-letter US state code. Supported: 'WA' (Washington, via WA L&I open data), 'CA' (California, via CSLB). Call list_supported_jurisdictions to see all options."
+          },
+          "license_number": {
+            "type": "string",
+            "description": "Contractor license or registration number to look up (e.g. 'ECOSTSC758NN'). Case-insensitive exact match. Preferred over business_name for unambiguous results."
+          },
+          "business_name": {
+            "type": "string",
+            "description": "Business name or partial business name to search for. Case-insensitive partial match. May return multiple results if ambiguous."
+          }
+        },
+        "required": ["jurisdiction"]
+      }
+    },
+    {
+      "name": "list_supported_jurisdictions",
+      "description": "List all US states (jurisdictions) supported by this contractor license verification server, with their data source and availability status.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ],
   "license": "MIT"
 }
