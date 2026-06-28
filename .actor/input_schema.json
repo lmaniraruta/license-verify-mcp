@@ -13,13 +13,16 @@
         "CA — California (BETA: CSLB may rate-limit automated requests; returns clean error if unavailable, no charge on failure)"
       ],
       "description": "Two-letter US state code. WA is fully live and reliable. CA is beta — returns a clean SESSION_ERROR if CSLB is unavailable; you are never charged on source failures.",
-      "editor": "select"
+      "editor": "select",
+      "default": "WA",
+      "prefill": "WA"
     },
     "license_number": {
       "title": "License / Registration Number",
       "type": "string",
       "description": "Contractor license or registration number. WA: alphanumeric (e.g. ECOSTSC758NN). CA: numeric only, up to 8 digits (e.g. 1100000). Exact match, case-insensitive. Preferred over business_name for precision.",
-      "editor": "textfield"
+      "editor": "textfield",
+      "prefill": "ECOSTSC758NN"
     },
     "business_name": {
       "title": "Business Name (WA only)",
