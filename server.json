@@ -1,7 +1,8 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.lmaniraruta/license-verify-mcp",
-  "description": "Contractor license verify — WA live (L&I open data, bond + insurance included), CA beta (CSLB).",
+  "description": "Verify contractor license, bond & insurance. WA live (L&I), CA beta (CSLB). Returns normalized JSON.",
+  "status": "active",
   "repository": {
     "url": "https://github.com/lmaniraruta/license-verify-mcp",
     "source": "github"

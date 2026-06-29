@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 # Install all deps (including devDeps needed for tsc build)
 COPY package*.json ./
-RUN npm ci --include=dev
+RUN npm ci --include=dev --ignore-scripts
 
 # Copy source and build
 COPY . .
