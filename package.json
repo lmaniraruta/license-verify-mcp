@@ -1,6 +1,6 @@
 {
   "name": "license-verify-mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "mcpName": "io.github.lmaniraruta/license-verify-mcp",
   "description": "MCP server for contractor license verification — WA live (L&I open data, bond + insurance), CA beta (CSLB). Returns normalized JSON.",
   "type": "module",
